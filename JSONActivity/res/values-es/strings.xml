@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hola!</string>
+    <string name="app_name">Resultados BUAP 2011</string>
+    <string name="hello_world">Hola mundo!</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="title_activity_main">Inicio</string>
+    <string name="title_activity_results">Admisión 2011</string>
+    <string name="messageStatusA">En hora buena... Bienvenido a la BUAP.</string>
+    <string name="messageStatusN">Ánimo no desfallescas... Sigue buscando... </string>
+    <string name="StatusA">Aceptado</string>
+    <string name="StatusN">Puntaje insuficiente</string>
+
+</resources>
