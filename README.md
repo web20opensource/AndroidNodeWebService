@@ -12,6 +12,10 @@ You can try with some of the next ids:
 201100001
 201100002
 
+#Languages & modes supported
+Landscape, Portrait
+Spanish, English
+
 #Further lectures
 http://developer.android.com/index.html
 http://www.wrox.com/WileyCDA/WroxTitle/Beginning-Android-4-Application-Development.productCd-1118199545.html
