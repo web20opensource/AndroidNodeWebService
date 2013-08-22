@@ -11,5 +11,10 @@
     <string name="messageStatusN">Come to me all who you are borried an wasted and I give you rest and peace.</string>
     <string name="StatusA">Accepted</string>
     <string name="StatusN">Score insufficient</string>
-
+    <!-- CONFIGURABLE PARAMETERS -->
+    <string name="webService">http://67.207.139.8:1337/?id=</string>
+    <string name="id">matricula</string>
+    <string name="score">puntaje</string>
+    <string name="career">carrera</string>
+    <string name="status">status</string>
 </resources>

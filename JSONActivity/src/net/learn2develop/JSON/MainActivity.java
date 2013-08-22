@@ -39,15 +39,12 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
 	}
 	
 	public void onClick(View v){
 		
 		TextView id = (TextView) findViewById(R.id.id);
-		
-		new ReadJSONFeedTask().execute("http://67.207.139.8:1337/?id=",id.getText().toString().trim());
+		new ReadJSONFeedTask().execute(getString(R.string.webService),id.getText().toString().trim());
 	}
 	
 	public String readJSONFeed(String URL, String id) {

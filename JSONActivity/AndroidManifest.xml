@@ -24,7 +24,7 @@
         <activity
             android:name="net.learn2develop.JSON.ResultsActivity"
             android:label="@string/title_activity_results" >
-                        <intent-filter>
+           <intent-filter>
                 <action android:name="net.calificaciones.show" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

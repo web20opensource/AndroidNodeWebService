@@ -30,7 +30,7 @@ public class ResultsActivity extends Activity {
 
         View backgroundimage = findViewById(R.id.background);
         Drawable background = backgroundimage.getBackground();
-        background.setAlpha(20);
+        background.setAlpha(30);
 
 		try {
 			JSONArray j = new JSONArray(getIntent().getStringExtra("results"));
@@ -38,18 +38,18 @@ public class ResultsActivity extends Activity {
             Log.i("JSON","Elements in json: "+j.length());
 
             TextView matricula = (TextView) findViewById(R.id.matricula);
-            matricula.setText(j.getJSONObject(0).get("matricula").toString());
+            matricula.setText(j.getJSONObject(0).get(getString(R.string.id)).toString());
 
             TextView carrera = (TextView) findViewById(R.id.carrera);
-            carrera.setText(j.getJSONObject(0).get("carrera").toString());
+            carrera.setText(j.getJSONObject(0).get(getString(R.string.career)).toString());
 
             TextView puntaje = (TextView) findViewById(R.id.puntaje);
-            puntaje.setText(j.getJSONObject(0).get("puntaje").toString());
+            puntaje.setText(j.getJSONObject(0).get(getString(R.string.score)).toString());
 
 
             String mensaje, status;
 
-            if (j.getJSONObject(0).get("status").toString().equals("A") ){
+            if (j.getJSONObject(0).get(getString(R.string.status)).toString().equals("A") ){
                 status =  getString(R.string.StatusA);
                 mensaje = getString(R.string.messageStatusA);
             }
