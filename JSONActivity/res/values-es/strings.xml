@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="hello">Hola!</string>
     <string name="app_name">Resultados BUAP 2011</string>
     <string name="hello_world">Hola mundo!</string>
@@ -11,5 +10,13 @@
     <string name="messageStatusN">Ánimo no desfallescas... Sigue buscando... </string>
     <string name="StatusA">Aceptado</string>
     <string name="StatusN">Puntaje insuficiente</string>
+    <string name="idLeyend">Por favor ingresa tu número de solicitud para buscar tu resultado </string>
+    <string name="score">CALIFICAICÓN : </string>
+    <string name="career">CARRERA : </string>
+    <string name="status">STATUS :</string>
+    <string name="results">RESULTADOS\nDE\nADMISION  \n2013</string>
+    <string name="buap">BENEMÉRITA\nUNIVERSIDAD\nAUTÓNOMA\nDE PUEBLA</string>
+    <string name="send">BUSCAR</string>
+    <string name="copyright">© 2013. Benemérita Universidad Autónoma de Puebla.\n Dirección de Administración Escolar.\n Puebla, Puebla. México</string>
 
 </resources>

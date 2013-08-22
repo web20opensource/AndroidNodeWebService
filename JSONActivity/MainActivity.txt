@@ -1,0 +1,376 @@
+package net.learn2develop.JSON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+
+import org.apache.http.client.methods.HttpGet;
+
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.content.res.Configuration;
+import android.graphics.Point;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Handler;
+import android.util.Log;
+import android.view.Display;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+public class MainActivity extends Activity {
+
+    private RelativeLayout myRelativeLayout;
+    private EditText id;
+    private Button send;
+    private TextView labelId;
+    private TextView labelButton;
+    private int mHeight = 0;
+    private int mWidth = 0;
+    private View mView;
+
+
+    private Handler mHandler = new Handler();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+
+    //See more at: http://thedeveloperworldisyours.com/android/add-a-textview-and-a-button-to-linear-layout-programmatically/#sthash.M0ScYDTE.dpuf
+        super.onCreate(savedInstanceState);
+
+
+       /* mView = findViewById(R.id.imageOrNotImage);
+        mView.getViewTreeObserver().addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener(){
+
+                    @Override
+                    public void onGlobalLayout() {
+                        // gets called after layout has been done but before display
+                        // so we can get the height then hide the view
+
+
+                        mHeight = mView.getHeight();  // Ahaha!  Gotcha
+                        mWidth = mView.getWidth();
+                        mView.getViewTreeObserver().removeGlobalOnLayoutListener( this );
+                        mView.setVisibility( View.GONE );
+                    }
+
+                });
+*/
+            //setContentView(R.layout.fragment_search_id);
+           // final View lay =   findViewById(R.id.relativeLayoutHor);
+
+           // lay.setVisibility(View.INVISIBLE);
+
+            //View x  =  (TextView) findViewById(R.id.id);
+            //Button y = (Button) findViewById(R.id.send);
+            /*showText(R.layout.buap);
+            showText(R.layout.dae);*/
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        int orientation = this.getResources().getConfiguration().orientation;
+       /* Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getHeight(size);
+
+        int width = size.x;
+        int height = size.y;*/
+        // ORIENTATION_LANDSCAPE - 2
+
+
+
+
+        if  ( orientation ==  2 ){
+
+
+           /* if ((getResources().getConfiguration().screenLayout &
+                    Configuration.SCREENLAYOUT_SIZE_MASK) ==
+                    Configuration.SCREENLAYOUT_SIZE_SMALL) {
+                try{
+                // on a small screen device ...
+                Log.i("jesucristo","small_1");
+                View layout1 = inflater.inflate(R.layout.buap,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_buap_hor_small));
+
+                TextView textBuap = (TextView) layout1.findViewById(R.id.textView1_hor_small);
+                //text.setText("BIENVENIDOS");
+
+                Toast toastBuap = new Toast(getApplicationContext());
+                toastBuap.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toastBuap.setDuration(Toast.LENGTH_LONG);
+                toastBuap.setView(layout1);
+                toastBuap.show();
+
+                View layout2 = inflater.inflate(R.layout.dae,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_dae_hor_small));
+
+                TextView textDae = (TextView) layout2.findViewById(R.id.textView2_hor_small);
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout2);
+                toast.show();
+
+                }catch(Exception io){
+                        Log.i("jesucristo","small2");
+                    }
+
+            }
+
+            else{*/
+                Log.i("jesucristo", "ave maría");
+                View layout1 = inflater.inflate(R.layout.buap,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_buap_hor));
+
+                TextView textBuap = (TextView) layout1.findViewById(R.id.textView1_hor);
+                //text.setText("BIENVENIDOS");
+
+                Toast toastBuap = new Toast(getApplicationContext());
+                toastBuap.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toastBuap.setDuration(Toast.LENGTH_LONG);
+                toastBuap.setView(layout1);
+                toastBuap.show();
+
+                View layout2 = inflater.inflate(R.layout.dae,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_dae_hor));
+
+                TextView textDae = (TextView) layout2.findViewById(R.id.textView2_hor);
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout2);
+                toast.show();
+        }
+        else{ // PORTRAIT
+               /* if ((getResources().getConfiguration().screenLayout &
+                    Configuration.SCREENLAYOUT_SIZE_MASK) ==
+                    Configuration.SCREENLAYOUT_SIZE_SMALL) {
+                // on a small screen device ...
+                try{
+                        Log.i("jesucristo","small");
+                View layout1 = inflater.inflate(R.layout.buap,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_buap_small));
+
+                //TextView textBuap = (TextView) layout1.findViewById(R.id.textView1_small);
+                //text.setText("BIENVENIDOS");
+
+                Toast toastBuap = new Toast(getApplicationContext());
+                toastBuap.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toastBuap.setDuration(Toast.LENGTH_LONG);
+                toastBuap.setView(layout1);
+                toastBuap.show();
+
+                View layout2 = inflater.inflate(R.layout.dae,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_dae_small));
+
+                //TextView textDae = (TextView) layout2.findViewById(R.id.textView2_small);
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout2);
+                toast.show();
+                }catch(Exception io){
+                        Log.i("jesucristo",io.toString());
+                }
+
+            }
+            else{
+*/
+
+                View layout1 = inflater.inflate(R.layout.buap,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_buap_ver));
+
+
+               TextView textBuap = (TextView) layout1.findViewById(R.id.textView1);
+                //text.setText("BIENVENIDOS");
+
+                Toast toastBuap = new Toast(getApplicationContext());
+                toastBuap.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toastBuap.setDuration(Toast.LENGTH_LONG);
+                toastBuap.setView(layout1);
+                toastBuap.show();
+
+                View layout2 = inflater.inflate(R.layout.dae,
+                        (ViewGroup) findViewById(R.id.toast_layout_root_dae));
+
+                //TextView textDae = (TextView) layout2.findViewById(R.id.textView2);
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout2);
+                toast.show();
+
+        }
+
+
+
+        mHandler.postDelayed(new Runnable() {
+            public void run() {
+                setContentView(R.layout.fragment_search_id);
+                //lay.setVisibility(VISIBLE);
+            }
+        }, 7000);
+
+
+
+
+
+
+
+
+
+        //LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(this.LAYOUT_INFLATER_SERVICE);
+        /*LayoutInflater vi = LayoutInflater.from(this);
+        View v = vi.inflate(R.layout.fragment_search_id, null);
+
+
+
+        View insertPoint = findViewById(R.id.empty);
+*/
+        //((ViewGroup) insertPoint).addView(v, 0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
+        // fill in any details dynamically here
+
+        /*
+        labelId = new TextView(this);
+        labelId.setText( getString(R.string.id) );
+
+        id =  new EditText(this);
+        id.setId(R.id.id);
+        id.setFocusable(true);
+
+        send = new Button(this);
+        send.setText(getString(R.string.send));
+        send.setId(R.id.send);
+
+
+        myRelativeLayout.addView(labelId);
+        myRelativeLayout.addView(id);
+        myRelativeLayout.addView(send);
+*/
+
+    }
+	
+	public void onClick(View v){
+		
+		TextView id = (TextView) findViewById(R.id.id);
+		//new ReadJSONFeedTask().execute(getString(R.string.webService),id.getText().toString().trim());
+        new ReadJSONFeedTask().execute("http://148.228.110.36:8080/?id=",id.getText().toString().trim());
+	}
+/*
+    public void showText(int resource){
+        //Retrieve the layout inflator
+        LayoutInflater inflater =  (LayoutInflater) getLayoutInflater();
+        //Assign the custom layout to view
+        //Parameter 1 - Custom layout XML
+        //Parameter 2 - Custom layout ID present in linearlayout tag of XML
+
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.relativeLayoutVertical);
+        View child = getLayoutInflater().inflate();
+        //item.addView(child);
+
+        Toast toast = new Toast(getApplicationContext());
+        //Set toast gravity to bottom
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        //Set toast duration
+        toast.setDuration(Toast.LENGTH_LONG); //3500
+        Integer tmp = Toast.LENGTH_LONG;
+
+        try{
+                layout = inflater.inflate(resource, (ViewGroup) findViewById(R.id.toast_layout_root));
+                toast.setView(layout);
+        //Return the application context
+        } catch (Exception io) {
+            Log.i("jesucristo",  tmp.toString() );
+            Log.i("jesucristo",  "ave maría" );
+            Log.i("jesucristo" , io.toString());
+        }
+
+        //Set the custom layout to Toast
+
+        //Display toast
+        toast.show();
+    }
+*/
+
+	public String readJSONFeed(String URL, String id) {
+		StringBuilder stringBuilder = new StringBuilder();
+		HttpClient client = new DefaultHttpClient();
+
+        String url = URL + id;
+		HttpGet httpGet = new HttpGet(url);
+        Log.i("url", url);
+		/*try{
+			httpGet.setHeader("Charset","UTF-8");
+		}catch (Exception e){
+			
+		}*/
+		try {
+			HttpResponse response = client.execute(httpGet);
+			StatusLine statusLine = response.getStatusLine();
+			int statusCode = statusLine.getStatusCode();
+			if (statusCode == 200) {
+				HttpEntity entity = response.getEntity();
+				InputStream content = entity.getContent();
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(content));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					stringBuilder.append(line);
+                    Log.i("URL",line);
+				}
+			} else {
+				Log.e("JSON", statusCode + " --" + statusLine.getReasonPhrase());
+				Log.e("JSON", "Failed to download file");
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return stringBuilder.toString();
+	}
+	
+    private class ReadJSONFeedTask extends AsyncTask<String, Void, String> {
+        protected String doInBackground(String... urls) {
+            return readJSONFeed(urls[0], urls[1]);
+        }
+        
+        protected void onPostExecute(String result) {
+    			//resultJSON = result;
+    			Intent i = new Intent("net.calificaciones.show");
+    			i.putExtra("results", result);
+    			startActivity(i);
+        }
+    }
+	
+	
+	
+	
+	
+
+
+}

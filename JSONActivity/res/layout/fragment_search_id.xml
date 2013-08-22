@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/relativeLayoutVertical"
+    android:background="#ffffff">
+
+    <RelativeLayout
+            android:layout_weight="2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+                android:background="@drawable/buap_logo_vector"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:focusable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/buap"
+                android:layout_gravity="center"
+                android:layout_weight="10"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="false"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignWithParentIfMissing="false"/>
+
+    </RelativeLayout>
+
+    <EditText
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:layout_above="@+id/send"
+            android:hint="@string/idLeyend"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:inputType="phone"
+            android:layout_alignRight="@+id/buap">
+        <requestFocus />
+    </EditText>
+
+    <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/send"
+            android:layout_above="@+id/buap"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            style="@style/layout"
+            android:gravity="center_horizontal"
+            android:textSize="5dp"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/buap"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp">
+
+    </TextView>
+
+</RelativeLayout>

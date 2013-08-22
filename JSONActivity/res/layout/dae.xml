@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/toast_layout_root_dae"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#DAAA"
+              android:alpha="1"
+              android:orientation="vertical"
+              android:padding="5dp" >
+
+
+<ImageView
+        android:layout_width="fill_parent"
+        android:src="@drawable/buap_logo_vector"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:layout_gravity="center"/>
+<TextView
+android:id="@+id/textView2"
+android:layout_width="wrap_content"
+android:text="@string/results"
+android:textAppearance="?android:attr/textAppearanceMedium"
+android:textAllCaps="true"
+android:textDirection="ltr"
+android:textIsSelectable="false"
+android:alpha="1"
+android:textStyle="bold"
+android:typeface="serif"
+android:layout_height="wrap_content"
+android:capitalize="words"
+android:layout_gravity="center"
+android:textAlignment="center"
+android:gravity="center_vertical|center_horizontal"/>
+
+</LinearLayout>
